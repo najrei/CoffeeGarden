@@ -1,11 +1,23 @@
 {
   "name": "coffeegarden",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/najrei/CoffeeGarden.git"
+  },
+  "bugs": {
+    "url": "https://github.com/najrei/CoffeeGarden/issues"
+  },
+  "homepage": "https://github.com/najrei/CoffeeGarden#readme",
+  "description": ""
 }
