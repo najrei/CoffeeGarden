@@ -1,20 +1,19 @@
 const express = require('express');
+const { engine } = require ('express-handlebars');
 const app = express();
 const port = 8000;
-const handlebars = require('express-handlebars');
+
+app.engine('handlebars', engine({
+   defaultLayout: 'planB.handlebars',
+   layoutsDir: __dirname + '/views/layouts'
+}));
 
 app.set('view engine', 'handlebars');
+app.set("views", "./views/layouts");
 
-app.engine('handlebars', handlebars({
-   layoutsDir: __dirname + '/views/layouts',
-   }));
 
 app.get('/', (req, res) => {
-//Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-res.render('main', {layout : 'index'});
+    res.render('index');
 });
 
-
-app.listen(port, () => {
-   console.log(`Now listening on port ${port}`);
-});
+app.listen(port, () => console.log(`App listening to port ${port}`));
