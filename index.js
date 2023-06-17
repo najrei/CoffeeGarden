@@ -5,15 +5,14 @@ const port = 8000;
 
 app.engine('handlebars', engine({
    defaultLayout: 'planB.handlebars',
-   layoutsDir: __dirname + '/views/layouts'
+   layoutsDir: __dirname + '/views/layouts',
+   partialsDir: __dirname + '/views/partials/'
 }));
 
 app.set('view engine', 'handlebars');
-app.set("views", "./views/layouts");
-
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('main', {layout: 'index'});
 });
 
 app.listen(port, () => console.log(`App listening to port ${port}`));
