@@ -15,4 +15,12 @@ app.get('/', (req, res) => {
     res.render('main', {layout: 'index'});
 });
 
+app.get('/suche', (req, res) => {
+    res.render('main', {layout: 'suche'})
+}), 
+
+app.post('/suche', (req, res) => {
+    //todo
+})
+
 app.listen(port, () => console.log(`App listening to port ${port}`));
